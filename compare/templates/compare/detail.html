@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+{{ object.text }}
+<ul>
+	<li>
+	<a href="{% url 'compare_list' %}">back to top</a>
+	</li>
+</ul>
+
+{{ object.dmm_id1 }}: {{ object.dmm_count1 }}
+{{ object.dmm_id2 }}: {{ object.dmm_count2 }}
+
+<form action="{% url 'compare_vote' object.id %}" method="post" accept-charset="utf-8">
+	{% csrf_token %}
+	{{ form.as_p }}
+
+<p><input type="submit" value="Vote"></p>
+</form>
+
+
+{% endblock %}

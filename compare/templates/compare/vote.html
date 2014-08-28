@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+{{ object.text }}
+<ul>
+	<li>
+	<a href="{% url 'compare_update' object.id %}">update</a>
+	</li>
+	<li>
+	<a href="{% url 'compare_delete' object.id %}">delete</a>
+	</li>
+	<li>
+	<a href="{% url 'compare_list' %}">back to top</a>
+	</li>
+</ul>
+
+
+{% endblock %}
+
