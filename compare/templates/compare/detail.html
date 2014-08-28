@@ -9,8 +9,8 @@
 	</li>
 </ul>
 
-{{ object.dmm_id1 }}: {{ object.dmm_count1 }}
-{{ object.dmm_id2 }}: {{ object.dmm_count2 }}
+<img alt="" src="{{ object.get_img1 }}">
+<img alt="" src="{{ object.get_img2 }}">
 
 <form action="{% url 'compare_vote' object.id %}" method="post" accept-charset="utf-8">
 	{% csrf_token %}
